@@ -6,13 +6,13 @@ This tool converts *xls* files produced by [ExportImportXlsPlugin](https://trac-
 
 1. Export the following fields from Trac:
 
-* id
-* summary
-* type - *defect*, *enhancment*, *feature*
-* component - any related to project, currently Trc components can be joined and presented under one common final name. This is configured inside the source code. The current mapping is:
+    * id
+    * summary
+    * type - *defect*, *enhancment*, *feature*
+    * component - any related to project, currently Trac components can be joined and presented under one common final name. This is configured inside the source code as `Map<Trac-component, Output-component>`. The current mapping is:
   
-  ```java
-  HashMap<String, String> map = new HashMap<String, String>();
+    ```java
+    HashMap<String, String> map = new HashMap<String, String>();
         map.put("QuimP-Plugin", "QuimP");
         map.put("QuimP-BOA", "QuimP");
         map.put("QuimP-ANA", "QuimP");
@@ -25,6 +25,16 @@ This tool converts *xls* files produced by [ExportImportXlsPlugin](https://trac-
         map.put("SetHeadSnakeFilter", "SetHeadSnakeFilter");
     ```
 
-* fixedin
+    * fixedin - which version current bug has been fixed in
 
-2. Run tool 
+2. Run tool
+    
+    ```sh
+    java -jar target/xls2history-1.0.0.jar
+    ```
+    
+    or
+    
+    ```
+    java -jar target/xls2history-1.0.0.jar input.xls output.md
+    ```

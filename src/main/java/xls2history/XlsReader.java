@@ -26,7 +26,23 @@ import org.slf4j.LoggerFactory;
 /**
  * Convert xls file obtained from Trac to MarkDown formatted text file that contains
  * list history of changes. It is grouped by components and sorted by versions within them.
- * Trac components can be grouped under common name 
+ * Trac components can be grouped under common name
+ * 
+ * General workflow is:
+ * 
+ * Read xls file 
+ * 
+ * Check whether header is correct
+ * 
+ * Copy everything into ArrayList<Entry> content
+ * 
+ * Look into Map and identify unique outputcomponent names (those that merge traccomonent names)
+ * 
+ * Go through list of records and copy them to separate arrays according to mapping between trac
+ * and output components. Records are grouped in separate arrays according to output components
+ * (HashMap<String, ArrayList<Entry>> a = new HashMap<String, ArrayList<Entry>>();)
+ * 
+ * Go through those arrays and create output file. Every outputcomponent array is sorted before
  * 
  * @author baniuk
  *
