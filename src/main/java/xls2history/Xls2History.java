@@ -48,6 +48,7 @@ public class Xls2History {
         map.put("QuimP-DIC", "QuimP");
         map.put("QuimP-ECMM", "QuimP");
         map.put("QuimP-Q", "QuimP");
+        map.put("QuimP-RandomW", "QuimP");
         map.put("HatSnakeFilter", "HatSnakeFilter");
         map.put("HedgehogSnakeFilter", "HedgehogSnakeFilter");
         map.put("MeanSnakeFilter", "MeanSnakeFilter");
